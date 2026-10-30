@@ -1,13 +1,16 @@
 workflows:
-android-workflow:
-name: ShopeePay Detector Android
-max_build_duration: 60
-environment:
-java: 17
-scripts:
-- name: Prepare project
-script: |
-echo "ShopeePay Detector project setup"
-ls -la
-artifacts:
-- "*.apk"
+  android-workflow:
+    name: ShopeePay Detector Android
+    max_build_duration: 60
+
+    environment:
+      java: 17
+
+    scripts:
+      - name: Build APK
+        script: |
+          chmod +x gradlew
+          ./gradlew assembleDebug
+
+    artifacts:
+      - app/build/outputs/apk/debug/*.apk
