@@ -15,4 +15,4 @@ mavenCentral()
 }
 
 rootProject.name = "ShopeePayDetector"
-include(":app")
+include(":aplikasi")
